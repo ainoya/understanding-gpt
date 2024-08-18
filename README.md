@@ -37,6 +37,14 @@ graph LR
         G --> H{Block ...}
         H --> I{Block N-1}
     end
+
+    subgraph Output
+        I --> T(Layer Norm)
+        T --> U(Linear)
+        U --> V(Logits)
+        V --> W(Softmax)
+        W --> X[Output Probabilities]
+    end
 ```
 
 ### Transformer Block
