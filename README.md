@@ -116,6 +116,20 @@ graph LR
     end
 ```
 
+## My Questions
+
+### Why does GPT use only the decoder layer, while Transformer (Vaswani et al., 2017) has both encoder and decoder layers?
+
+- **Superior Zero-shot Generalization Performance:** Decoder-only models like GPT have been reported to demonstrate higher zero-shot generalization performance compared to other architectures. This strength is particularly crucial for tasks like dialogue and text generation.
+- **Focus on Autoregressive Generation:** The decoder architecture is inherently focused on autoregressively predicting the next word in a sequence. By eliminating the encoder, the model can dedicate its full capacity to optimize for generation tasks, potentially leading to better performance.
+- **Reduced Memory Footprint and Computational Cost:** Compared to encoder-decoder architectures, decoder-only models have a smaller memory footprint due to the absence of encoder parameters. This reduction in parameters also translates to lower computational costs for training. Consequently, decoder-only models can be trained on larger datasets more efficiently, potentially contributing to their superior performance.
+- **Limitations of Encoder-only Architecture:** Encoder-only architectures are limited to generating the same number of tokens as the input, making them unsuitable for generation-focused applications.
+
+[\[2204\.05832\] What Language Model Architecture and Pretraining Objective Work Best for Zero\-Shot Generalization?](https://arxiv.org/abs/2204.05832)
+
+[\[D\] Why does the decoder\-only architecture for the GPT models work better than using an encoder for the prompt? : r/LanguageTechnology](https://www.reddit.com/r/LanguageTechnology/comments/12fhw02/d_why_does_the_decoderonly_architecture_for_the/)
+
+
 ## References
 
 - [LaurentMazare/tch-rs: Rust bindings for the C++ api of PyTorch.](https://github.com/LaurentMazare/tch-rs)
